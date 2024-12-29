@@ -3,14 +3,11 @@
 #  Note:        Intended to be used in concert with Oh My Zsh
 #  ---------------------------------------------------------------------------
 #  Sections:
-#  1.  Prompt
-#  2.  Language & Encoding
-#  3.  Editor
-#  4.  GPG
-#  5.  Python
-#  6.  Homebrew
-#  7.  Paths
-#  8.  Manpager
+#  1.  Language & Encoding
+#  2.  Python
+#  3.  Tokens
+#  4.  Manpager
+#  5.  Editor
 #  ---------------------------------------------------------------------------
 
 #  --------------------------------------------------
@@ -33,41 +30,17 @@
 #   3. Tokens
 #  --------------------------------------------------
 
-    # Add Homebrew Github API
-    export HOMEBREW_GITHUB_API_TOKEN="GITHUB API TOKEN HERE"
-    # Tell homebrew to not autoupdate every single time I run it (just once a week).
-    export HOMEBREW_AUTO_UPDATE_SECS=604800
-
     export GITHUB_API_TOKEN="GITHUB API TOKEN HERE"
 
 #  --------------------------------------------------
-#   4. Paths
-#  --------------------------------------------------
-
-    export PATH="PATH HERE"
-
-#  --------------------------------------------------
-#   5. Manpage
+#   4. Manpage
 #  --------------------------------------------------
 
     # Don’t clear the screen after quitting a manual page.
     export MANPAGER='less -X';
 
 #  --------------------------------------------------
-#   6. Go
-#  --------------------------------------------------
-
-    export ASDF_GOLANG_MOD_VERSION_ENABLED='false'
-    export GOPATH=$(go env GOPATH)
-    export GOROOT=$(go env GOROOT)
-    export GOBIN=$(go env GOBIN)
-    export PATH=$PATH:$GOPATH/bin
-    export PATH=$PATH:$GOROOT/bin
-    export PATH=$PATH:$GOBIN
-
-
-#  --------------------------------------------------
-#   7. Editor
+#   5. Editor
 #  --------------------------------------------------
 
     # Preferred editor for local and remote sessions
@@ -76,15 +49,3 @@
     else
         export EDITOR='subl'
     fi
-
-#  --------------------------------------------------
-#   8.  GPG
-#  --------------------------------------------------
-
-    # GPG Agent and Authentication configuration for
-    # Yubikey SSH setup
-    GPG_TTY=$(tty)
-    SSH_AUTH_SOCK=$HOME/.gnupg/S.gpg-agent.ssh
-    export GPG_TTY SSH_AUTH_SOCK
-    gpgconf --launch gpg-agent
-    gpg-connect-agent updatestartuptty /bye

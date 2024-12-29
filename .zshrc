@@ -24,26 +24,13 @@
   # Custom plugins may be added to $ZSH_CUSTOM/plugins/
   # Example format: plugins=(rails git textmate ruby lighthouse)
   # Add wisely, as too many plugins slow down shell startup.
-  plugins=(zsh-nvm git extract urltools)
+  plugins=(git extract urltools)
 
   # Load Oh My Zsh
   source $ZSH/oh-my-zsh.sh
 
-  # Load zsh-syntax-highlighting.
-  source $(brew --prefix)/share/zsh-syntax-highlighting/zsh-syntax-highlighting.zsh
-  # Load zsh-autosuggestions.
-  source $(brew --prefix)/share/zsh-autosuggestions/zsh-autosuggestions.zsh
-
   # Enable autosuggestions automatically.
   ZSH_AUTOSUGGEST_HIGHLIGHT_STYLE="fg=10"
-
-  # Load zsh-history-substring-search.
-  source $(brew --prefix)/share/zsh-history-substring-search/zsh-history-substring-search.zsh
-  bindkey '^[[A' history-substring-search-up
-  bindkey '^[[B' history-substring-search-down
-
-  # ITerm2 integration
-  source ${HOME}/.iterm2_shell_integration.zsh
 
 # Prompt
   export NEWLINE=$'\n'

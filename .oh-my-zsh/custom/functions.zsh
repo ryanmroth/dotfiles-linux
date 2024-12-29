@@ -16,10 +16,6 @@
 #  --------------------------------------------------
 #   1.  Make Terminal Better
 #  --------------------------------------------------
-    
-    function trash () { 
-      command mv "$@" ~/.Trash ;        # Moves a file to the trash
-    }
 
     # Directories
     # ---------------
@@ -81,11 +77,6 @@
     # Find file whose name ends with a given string
     function ffe () {
       /usr/bin/find . -name '*'"$@" ;
-    }
-
-    # Search for a file using MacOS Spotlight's metadata
-    function spotlight () {
-      mdfind "kMDItemDisplayName == '$@'wc";
     }
 
 #  --------------------------------------------------
